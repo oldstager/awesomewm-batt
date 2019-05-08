@@ -25,7 +25,7 @@ local function bat_notification()
     })
   end
 
-  if (bat_capacity >= 90 and (bat_status == "Charging" or bat_status == "Full")) then
+  if (bat_capacity >= 85 and (bat_status == "Charging" or bat_status == "Full")) then
     naughty.notify({ title      = "Battery Warning"
       , text       = "Battery secured: it's already " .. bat_capacity .."%" 
       , fg="#ff0000"
