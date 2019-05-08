@@ -6,7 +6,7 @@ local function trim(s)
 end
 
 local function bat_notification()
-  
+
   local f_capacity = assert(io.open("/sys/class/power_supply/BAT0/capacity", "r"))
   local f_status = assert(io.open("/sys/class/power_supply/BAT0/status", "r"))
 
@@ -26,10 +26,10 @@ local function bat_notification()
   end
 
   if (bat_capacity >= 85 and (bat_status == "Charging" or bat_status == "Full")) then
-    naughty.notify({ title      = "Battery Warning"
-      , text       = "Battery secured: it's already " .. bat_capacity .."%" 
-      , fg="#ff0000"
-      , bg="#228B22" -- forest green
+    naughty.notify({ title      = "Battery Status"
+      , text       = "Battery secured: " .. bat_capacity .."%"
+      , fg="#006400"
+      , bg="#ffffff"
       , timeout    = 15
       , position   = "top_middle"
     })
@@ -37,7 +37,7 @@ local function bat_notification()
 
 end
 
-battimer = timer({timeout = 120})
+battimer = timer({timeout = 60})
 battimer:connect_signal("timeout", bat_notification)
 battimer:start()
 
