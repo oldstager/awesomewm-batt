@@ -7,5 +7,6 @@ This [Lua](https://www.lua.org) script is meant to be used in [awesome window ma
 
 ## Usage
 
-Just add `battwarn.lua` file contents to `$HOME/.config/awesome/rc.lua` and then (re)start your awesomewm. That's all.
+Just add `battwarn.lua` file contents to `$HOME/.config/awesome/rc.lua` and then (re)start your
+awesomewm. That's all. See [example](example/) directory for more practical explanation.
 
